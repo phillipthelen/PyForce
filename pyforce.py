@@ -37,30 +37,23 @@ def passwordforce(length):
 	while True:
 		for c in characterlist:
 			suggestlist[i] = c
-			#print "".join(suggestlist)
 			hash = hashlib.md5("".join(suggestlist)).hexdigest()
 			if hashlib.md5("".join(suggestlist)).hexdigest() == forcehash:
 				print "The password is", "".join(suggestlist)
 				end = time.clock()
 				print "The search took", end - start, "seconds"
 				quit()
-		#print "".join(suggestlist)
-		#print -n, suggestlist[-n]
 		while suggestlist[-n] == characterlist[-1]:
-			#print n, suggestlist, suggestlist[-n]
 			suggestlist[-n] = characterlist[0]
 			m = m+1
-			#print len(suggestlist), n
 			if len(suggestlist) != n:
 				n = n+1
-		#print len(suggestlist), n, m	
 		if m > len(suggestlist):
 			reached = time.clock()
 			print "reached", len(suggestlist), "characters in", reached-start, "seconds"
 			suggestlist.append("a")
 			i = i+1
 		else:
-			#print suggestlist[-n], characterlist[characterlist.index(suggestlist[-n])+1]
 			suggestlist[-n] = characterlist[characterlist.index(suggestlist[-n])+1]
 		n = 1
 		m = 1
@@ -68,13 +61,8 @@ def passwordforce(length):
 try:
 	forcehash = sys.argv[1]
 except IndexError:
-    print "Specify the hash that you wan't to bruteforce as first argument"
+    print "Specify the hash that you want to bruteforce as first argument"
 else:
 	start = time.clock()
 	characterlist = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 	passwordforce(0)
-	#for b in range(0, threadcount):
-		#thread.start_new_thread(passwordforce, (b, ))
-	#while True: 
-		#pass
-		
