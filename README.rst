@@ -9,7 +9,7 @@ Usage
 
 In command line::
 
-	pyforce.py $md5sum
+    pyforce.py hash
 
 If you want the script to test more than the specified characters, just add them to the list at the bottom of ``pyforce.py`` file.
 
