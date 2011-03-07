@@ -1,7 +1,0 @@
-usage:
-	pyforce.py $md5sum
-
-if you want the script to test more than the specified characters, just add them to the list
-
-
-Still needs multithreading support...
